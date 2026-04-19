@@ -1,1 +1,2 @@
-# WakeMate-Java
+# WakeMate
+AI Powered Drowsiness Detector

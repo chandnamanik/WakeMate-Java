@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-color: #0b0f19; /* Extremely dark blue/black for max contrast */
+  --surface-color: #151a28; /* Slightly lighter for cards */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #60a5fa; /* Eye-catching light blue */
+  --accent-glow: rgba(96, 165, 250, 0.4);
+  --success-color: #10b981;
+  --danger-color: #ef4444; 
+  --danger-glow: rgba(239, 68, 68, 0.4);
+  
+  --glass-bg: rgba(21, 26, 40, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  
+  --font-family: 'Outfit', system-ui, sans-serif;
+  
+  /* Transition state for toggling modes */
+  --theme-transition: background-color 0.5s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+/* Red Light Mode Overrides: Best for safe night driving/focus */
+.red-light-mode {
+  --bg-color: #080000;
+  --surface-color: #120000;
+  --text-primary: #ff3333;
+  --text-secondary: #990000;
+  --accent-color: #ff0000;
+  --accent-glow: rgba(255, 0, 0, 0.4);
+  --success-color: #ff5555;
+  --danger-color: #ff0000;
+  --danger-glow: rgba(255, 0, 0, 0.6);
+  --glass-bg: rgba(20, 0, 0, 0.85);
+  --glass-border: rgba(255, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: var(--theme-transition);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Shared Premium Utility Classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--glass-shadow);
+  transition: var(--theme-transition);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
